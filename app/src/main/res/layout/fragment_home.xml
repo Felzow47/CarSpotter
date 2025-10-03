@@ -1,192 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.HomeFragment">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/spacing_medium">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <!-- En-tête avec statistiques -->
-        <LinearLayout
+        <!-- Header de bienvenue -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/spacing_medium"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ma Collection"
-                android:textSize="@dimen/text_size_large"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary" />
-
-            <TextView
-                android:id="@+id/text_total_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total: 0 voitures"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_small" />
-
-        </LinearLayout>
-
-        <!-- Liste des voitures -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_voitures"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:clipToPadding="false"
-            android:paddingBottom="@dimen/spacing_large"
-            tools:listitem="@layout/item_voiture_card" />
-
-        <!-- Notification pour plaques incomplètes -->
-        <LinearLayout
-            android:id="@+id/layout_incomplete_notification"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small"
-            android:background="@drawable/notification_background_warning"
-            android:orientation="horizontal"
-            android:padding="@dimen/spacing_medium"
-            android:visibility="gone"
-            android:gravity="center_vertical"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_warning"
-                android:tint="@color/car_warning"
-                android:layout_marginEnd="@dimen/spacing_small" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="?attr/colorPrimary">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/text_incomplete_count"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/car_warning"
-                    android:textSize="@dimen/text_size_small"
+                    android:text="🚗 CarSpotter"
+                    android:textSize="28sp"
                     android:textStyle="bold"
-                    tools:text="3 plaque(s) sans info complète" />
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Seront mises à jour automatiquement avec internet"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="@dimen/text_size_caption" />
+                    android:text="Bienvenue dans votre collection automobile !"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center" />
 
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_sync"
-                android:tint="@color/car_warning" />
+        </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
-
-        <!-- Statut de mise à jour automatique -->
-        <LinearLayout
-            android:id="@+id/layout_update_status"
+        <!-- Statistiques rapides -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_small"
-            android:background="@drawable/notification_background_info"
-            android:orientation="horizontal"
-            android:padding="@dimen/spacing_medium"
-            android:visibility="gone"
-            android:gravity="center_vertical">
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
-            <ImageView
-                android:id="@+id/icon_update_status"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_sync"
-                android:tint="@color/car_primary"
-                android:layout_marginEnd="@dimen/spacing_small" />
-
-            <TextView
-                android:id="@+id/text_update_status"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/car_primary"
-                android:textSize="@dimen/text_size_small"
-                android:textStyle="bold"
-                tools:text="🔄 Mise à jour des plaques en cours..." />
+                android:orientation="horizontal"
+                android:padding="16dp">
 
-            <ProgressBar
-                android:id="@+id/progress_update"
-                style="?android:attr/progressBarStyleSmall"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:visibility="gone" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊"
+                        android:textSize="24sp" />
 
-        <!-- Message vide -->
-        <LinearLayout
-            android:id="@+id/text_empty_message"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Voitures"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📸"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Photos"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏆"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Favoris"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Actions principales -->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:visibility="gone">
+            android:layout_height="wrap_content"
+            android:text="🎯 Actions Principales"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/ic_collection"
-                android:alpha="0.3"
-                android:layout_marginBottom="@dimen/spacing_medium" />
+        <!-- Bouton Capture Photo -->
+        <Button
+            android:id="@+id/btn_capture_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📸 Capturer une Voiture"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.Button" />
+
+        <!-- Bouton Collection -->
+        <Button
+            android:id="@+id/btn_view_collection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🚗 Voir ma Collection"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- Bouton Paramètres -->
+        <Button
+            android:id="@+id/btn_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚙️ Paramètres"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- Message de statut -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/holo_green_light">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/message_no_voitures"
-                android:textSize="@dimen/text_size_medium"
-                android:textColor="@color/text_secondary"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/spacing_small" />
+                android:text="✅ App fonctionnelle ! Navigation par fragments active.\n🎯 Prochaine étape : Base de données Room + ML Kit OCR"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:padding="16dp"
+                android:textAlignment="center" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Appuyez sur + pour ajouter votre première voiture"
-                android:textSize="@dimen/text_size_small"
-                android:textColor="@color/text_hint"
-                android:gravity="center" />
-
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
-    <!-- Bouton flottant d'ajout -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_add"
-        android:contentDescription="@string/action_add" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>

@@ -41,6 +41,25 @@
             </intent-filter>
         </activity>
 
+        <!-- Activité caméra -->
+        <activity
+            android:name=".ui.activity.CameraActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activity.MainActivity" />
+
+        <!-- Activité collection -->
+        <activity
+            android:name=".ui.activity.CollectionActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.activity.MainActivity" />
+
+        <!-- Activité paramètres -->
+        <activity
+            android:name=".ui.activity.SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.activity.MainActivity" />
+
         <!-- Activité d'ajout de voiture -->
         <activity
             android:name=".ui.activity.AddVoitureActivity"

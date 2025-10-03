@@ -1,6 +1,7 @@
 package com.felzow47.carspotter.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import com.felzow47.carspotter.data.dao.VoitureDao
 import com.felzow47.carspotter.data.database.CarSpotterDatabase
@@ -28,5 +29,11 @@ object DatabaseModule {
     @Provides
     fun provideVoitureDao(database: CarSpotterDatabase): VoitureDao {
         return database.voitureDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext appContext: Context): SharedPreferences {
+        return appContext.getSharedPreferences("carspotter_prefs", Context.MODE_PRIVATE)
     }
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🚗 Ma Collection"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="?attr/colorPrimary"
+        android:textColor="@android:color/white" />
+
+    <!-- RecyclerView pour les voitures -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Message vide -->
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="🚗 Aucune voiture dans votre collection\n\n📸 Utilisez le bouton + pour ajouter votre première voiture !\n\n(Le FAB en bas à droite)"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:padding="32dp"
+        android:textColor="@android:color/darker_gray"
+        android:visibility="visible" />
+
+</LinearLayout>
