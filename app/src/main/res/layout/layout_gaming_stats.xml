@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_medium"
+    android:background="@drawable/stats_gaming_background">
+
+    <!-- Niveau utilisateur -->
+    <LinearLayout
+        android:id="@+id/layout_user_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/level_background"
+        android:padding="@dimen/spacing_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎮"
+            android:textSize="24sp"
+            android:layout_marginEnd="@dimen/spacing_small" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NIVEAU"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_user_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25"
+                    android:textColor="@color/car_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/spacing_small"
+                    tools:text="25" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/text_total_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12,450 pts"
+                    android:textColor="@color/car_accent"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="12,450 pts" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_level"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:progress="65"
+                android:max="100"
+                android:progressTint="@color/car_primary" />
+
+            <TextView
+                android:id="@+id/text_next_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,550 pts pour le niveau suivant"
+                android:textColor="@color/text_secondary"
+                android:textSize="10sp"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                tools:text="1,550 pts pour le niveau suivant" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Stats de rareté -->
+    <LinearLayout
+        android:id="@+id/layout_rarity_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:layout_constraintTop_toBottomOf="@id/layout_user_level"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Légendaires -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/rarity_legendary_bg"
+            android:padding="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_tiny">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏆"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_legendary_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="#FFD700"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Légendaires"
+                android:textColor="#FFD700"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Mythiques -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/rarity_mythic_bg"
+            android:padding="@dimen/spacing_small"
+            android:layout_marginHorizontal="@dimen/spacing_tiny">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💎"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_mythic_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textColor="#9932CC"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mythiques"
+                android:textColor="#9932CC"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Épiques -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/rarity_epic_bg"
+            android:padding="@dimen/spacing_small"
+            android:layout_marginStart="@dimen/spacing_tiny">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔥"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_epic_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textColor="#FF4500"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Épiques"
+                android:textColor="#FF4500"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Achievements récents -->
+    <TextView
+        android:id="@+id/title_achievements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏅 Achievements Récents"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:layout_constraintTop_toBottomOf="@id/layout_rarity_stats"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_achievements"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/title_achievements"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_achievement" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

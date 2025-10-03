@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.CloudBackupFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Section Non connecté -->
+            <LinearLayout
+                android:id="@+id/layout_signed_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☁️ Sauvegarde Cloud"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/spacing_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sauvegardez vos voitures sur le cloud pour ne jamais les perdre !"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/spacing_large" />
+
+                <!-- Connexion Google (ultra-simple) -->
+                <Button
+                    android:id="@+id/button_sign_in_google"
+                    style="@style/CarSpotter.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="🔑 Se connecter avec Google"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="@dimen/spacing_medium" />
+
+                <!-- Ou séparateur -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginVertical="@dimen/spacing_medium">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider_color" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ou"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginHorizontal="@dimen/spacing_medium" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider_color" />
+
+                </LinearLayout>
+
+                <!-- Connexion Email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    style="@style/CarSpotter.TextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="📧 Email"
+                        android:inputType="textEmailAddress" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    style="@style/CarSpotter.TextInputLayout"
+                    app:endIconMode="password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="🔒 Mot de passe"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button_create_account"
+                        style="@style/CarSpotter.Button.Outlined"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/spacing_small"
+                        android:text="Créer compte" />
+
+                    <Button
+                        android:id="@+id/button_sign_in_email"
+                        style="@style/CarSpotter.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:text="Se connecter" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Section Connecté -->
+            <LinearLayout
+                android:id="@+id/layout_signed_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- En-tête utilisateur connecté -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/user_connected_background"
+                    android:padding="@dimen/spacing_medium"
+                    android:layout_marginBottom="@dimen/spacing_medium"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_account_circle"
+                        android:tint="@color/car_success"
+                        android:layout_marginEnd="@dimen/spacing_medium" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✅ Connecté"
+                            android:textColor="@color/car_success"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_user_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            tools:text="user@example.com" />
+
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switch_auto_backup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto-backup"
+                        android:checked="true" />
+
+                </LinearLayout>
+
+                <!-- Actions de sauvegarde -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/spacing_medium">
+
+                    <Button
+                        android:id="@+id/button_backup_now"
+                        style="@style/CarSpotter.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/spacing_small"
+                        android:text="💾 Sauvegarder"
+                        android:enabled="true" />
+
+                    <Button
+                        android:id="@+id/button_refresh"
+                        style="@style/CarSpotter.Button.Outlined"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/spacing_small"
+                        android:text="🔄 Actualiser" />
+
+                </LinearLayout>
+
+                <!-- Statut de stockage -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/storage_stats_background"
+                    android:padding="@dimen/spacing_medium"
+                    android:layout_marginBottom="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📊 Stockage Cloud"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="@dimen/spacing_small" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_storage"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginBottom="@dimen/spacing_small"
+                        android:progress="25"
+                        android:max="100" />
+
+                    <TextView
+                        android:id="@+id/text_storage_used"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        tools:text="Utilisé: 256MB / 1024MB" />
+
+                </LinearLayout>
+
+                <!-- Liste des sauvegardes -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Historique des sauvegardes"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/spacing_small" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_backups"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_backup" />
+
+                <!-- Message liste vide -->
+                <LinearLayout
+                    android:id="@+id/layout_empty_backups"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="@dimen/spacing_large"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_cloud_off"
+                        android:alpha="0.3"
+                        android:layout_marginBottom="@dimen/spacing_medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aucune sauvegarde pour le moment"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+                <!-- Bouton déconnexion -->
+                <Button
+                    android:id="@+id/button_sign_out"
+                    style="@style/CarSpotter.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🚪 Se déconnecter"
+                    android:textColor="@color/car_error"
+                    android:layout_marginTop="@dimen/spacing_large" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Statut des opérations -->
+    <LinearLayout
+        android:id="@+id/layout_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/notification_background_info"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_medium"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/icon_status"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sync"
+            android:layout_marginEnd="@dimen/spacing_small" />
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/car_primary"
+            android:textSize="14sp"
+            tools:text="🔄 Sauvegarde en cours..." />
+
+        <ProgressBar
+            android:id="@+id/progress_status"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

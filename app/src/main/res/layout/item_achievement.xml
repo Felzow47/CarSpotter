@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/achievement_background"
+    android:padding="@dimen/spacing_small"
+    android:layout_margin="@dimen/spacing_tiny">
+
+    <TextView
+        android:id="@+id/text_achievement_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏆"
+        android:textSize="24sp"
+        tools:text="🏆" />
+
+    <TextView
+        android:id="@+id/text_achievement_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expert Ferrari"
+        android:textColor="@color/text_primary"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/spacing_tiny"
+        android:gravity="center"
+        tools:text="Expert Ferrari" />
+
+</LinearLayout>

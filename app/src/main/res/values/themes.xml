@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CarSpotter" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/car_primary</item>
+        <item name="colorPrimaryVariant">@color/car_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/car_accent</item>
+        <item name="colorSecondaryVariant">@color/car_accent_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/car_background</item>
+        <item name="colorSurface">@color/car_surface</item>
+        <item name="colorOnSurface">@color/car_on_surface</item>
+        <!-- FAB style -->
+        <item name="floatingActionButtonStyle">@style/CarSpotter.FloatingActionButton</item>
+    </style>
+
+    <!-- Floating Action Button Style -->
+    <style name="CarSpotter.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/car_accent</item>
+        <item name="tint">@color/white</item>
+    </style>
+
+    <!-- Card Style -->
+    <style name="CarSpotter.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/car_surface</item>
+    </style>
+
+    <style name="CarSpotter.Card.Pokemon" parent="CarSpotter.Card">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="CarSpotter.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/car_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CarSpotter.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/car_primary</item>
+        <item name="android:textColor">@color/car_primary</item>
+    </style>
+
+    <!-- TextInputLayout Style -->
+    <style name="CarSpotter.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/car_primary</item>
+        <item name="hintTextColor">@color/car_primary</item>
+    </style>
+
+    <!-- Toolbar Style -->
+    <style name="CarSpotter.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/car_primary</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+    </resources>

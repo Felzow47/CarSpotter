@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_medium">
+
+        <!-- En-tête avec statistiques -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ma Collection"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/text_total_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: 0 voitures"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_small" />
+
+        </LinearLayout>
+
+        <!-- Liste des voitures -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_voitures"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/spacing_large"
+            tools:listitem="@layout/item_voiture_card" />
+
+        <!-- Notification pour plaques incomplètes -->
+        <LinearLayout
+            android:id="@+id/layout_incomplete_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_small"
+            android:background="@drawable/notification_background_warning"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_medium"
+            android:visibility="gone"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_warning"
+                android:tint="@color/car_warning"
+                android:layout_marginEnd="@dimen/spacing_small" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_incomplete_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/car_warning"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold"
+                    tools:text="3 plaque(s) sans info complète" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seront mises à jour automatiquement avec internet"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_caption" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_sync"
+                android:tint="@color/car_warning" />
+
+        </LinearLayout>
+
+        <!-- Statut de mise à jour automatique -->
+        <LinearLayout
+            android:id="@+id/layout_update_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_small"
+            android:background="@drawable/notification_background_info"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_medium"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/icon_update_status"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_sync"
+                android:tint="@color/car_primary"
+                android:layout_marginEnd="@dimen/spacing_small" />
+
+            <TextView
+                android:id="@+id/text_update_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/car_primary"
+                android:textSize="@dimen/text_size_small"
+                android:textStyle="bold"
+                tools:text="🔄 Mise à jour des plaques en cours..." />
+
+            <ProgressBar
+                android:id="@+id/progress_update"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Message vide -->
+        <LinearLayout
+            android:id="@+id/text_empty_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_collection"
+                android:alpha="0.3"
+                android:layout_marginBottom="@dimen/spacing_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/message_no_voitures"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Appuyez sur + pour ajouter votre première voiture"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_hint"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Bouton flottant d'ajout -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_add"
+        android:contentDescription="@string/action_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

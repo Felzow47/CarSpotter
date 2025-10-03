@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">CarSpotter</string>
+
+    <!-- Navigation -->
+    <string name="navigation_home">Accueil</string>
+    <string name="navigation_collection">Collection</string>
+    <string name="navigation_favorites">Favoris</string>
+    <string name="navigation_search">Recherche</string>
+    <string name="navigation_settings">Paramètres</string>
+
+    <!-- Actions -->
+    <string name="action_add">Ajouter</string>
+    <string name="action_edit">Modifier</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="action_save">Enregistrer</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="action_share">Partager</string>
+    <string name="action_export">Exporter</string>
+    <string name="action_take_photo">Prendre une photo</string>
+    <string name="action_add_to_favorites">Ajouter aux favoris</string>
+    <string name="action_remove_from_favorites">Retirer des favoris</string>
+    <string name="action_search">Rechercher</string>
+
+    <!-- Voiture -->
+    <string name="voiture_marque">Marque</string>
+    <string name="voiture_modele">Modèle</string>
+    <string name="voiture_type">Type</string>
+    <string name="voiture_version">Version</string>
+    <string name="voiture_couleur">Couleur</string>
+    <string name="voiture_date_sortie">Date de sortie</string>
+    <string name="voiture_immatriculation">Immatriculation</string>
+    <string name="voiture_moteur">Moteur</string>
+    <string name="voiture_puissance">Puissance</string>
+    <string name="voiture_carburant">Carburant</string>
+    <string name="voiture_transmission">Transmission</string>
+    <string name="voiture_lieu_observation">Lieu d\'observation</string>
+    <string name="voiture_date_observation">Date d\'observation</string>
+    <string name="voiture_tags">Tags</string>
+    <string name="voiture_notes">Notes</string>
+
+    <!-- Types de véhicules -->
+    <string name="type_citadine">Citadine</string>
+    <string name="type_berline">Berline</string>
+    <string name="type_break">Break</string>
+    <string name="type_coupe">Coupé</string>
+    <string name="type_cabriolet">Cabriolet</string>
+    <string name="type_suv">SUV</string>
+    <string name="type_crossover">Crossover</string>
+    <string name="type_monospace">Monospace</string>
+    <string name="type_ludospace">Ludospace</string>
+    <string name="type_pickup">Pick-up</string>
+    <string name="type_utilitaire">Utilitaire</string>
+    <string name="type_voiture_luxe">Voiture de luxe</string>
+    <string name="type_voiture_sport">Voiture de sport</string>
+    <string name="type_hypercar">Hypercar</string>
+    <string name="type_supercar">Supercar</string>
+    <string name="type_voiture_classique">Voiture classique</string>
+    <string name="type_voiture_ancienne">Voiture ancienne</string>
+    <string name="type_electrique">Électrique</string>
+    <string name="type_hybride">Hybride</string>
+    <string name="type_autre">Autre</string>
+
+    <!-- Messages -->
+    <string name="message_voiture_added">Voiture ajoutée avec succès</string>
+    <string name="message_voiture_updated">Voiture modifiée avec succès</string>
+    <string name="message_voiture_deleted">Voiture supprimée</string>
+    <string name="message_no_voitures">Aucune voiture dans votre collection</string>
+    <string name="message_loading">Chargement en cours...</string>
+    <string name="message_error">Une erreur s\'est produite</string>
+    <string name="message_permission_required">Permission requise</string>
+    <string name="message_camera_permission">Permission camera nécessaire pour prendre des photos</string>
+    <string name="message_location_permission">Permission localisation nécessaire pour enregistrer le lieu</string>
+
+    <!-- Reconnaissance de plaque -->
+    <string name="plate_recognition_title">Reconnaissance de plaque</string>
+    <string name="plate_recognition_scanning">Analyse de l\'image en cours...</string>
+    <string name="plate_recognition_success">Plaque reconnue avec succès</string>
+    <string name="plate_recognition_error">Erreur lors de la reconnaissance</string>
+    <string name="plate_recognition_no_plate">Aucune plaque détectée</string>
+
+    <!-- Search -->
+    <string name="search_hint">Rechercher une voiture...</string>
+    <string name="search_by_marque">Par marque</string>
+    <string name="search_by_type">Par type</string>
+    <string name="search_by_couleur">Par couleur</string>
+    <string name="search_by_lieu">Par lieu</string>
+    <string name="search_by_tag">Par tag</string>
+    <string name="search_results">Résultats de recherche</string>
+    <string name="search_no_results">Aucun résultat trouvé</string>
+
+    <!-- Export -->
+    <string name="export_pdf">Exporter en PDF</string>
+    <string name="export_csv">Exporter en CSV</string>
+    <string name="export_images">Exporter les images</string>
+
+    <!-- Collections -->
+    <string name="collection_name">Nom de la collection</string>
+    <string name="collection_description">Description</string>
+    <string name="collection_create">Créer une collection</string>
+    <string name="collection_edit">Modifier la collection</string>
+    <string name="collection_empty">Collection vide</string>
+
+    <!-- Statistics -->
+    <string name="stats_total_voitures">Total voitures</string>
+    <string name="stats_favorites">Favoris</string>
+    <string name="stats_by_marque">Par marque</string>
+    <string name="stats_by_type">Par type</string>
+
+    <!-- Settings -->
+    <string name="settings_theme">Thème</string>
+    <string name="settings_theme_light">Clair</string>
+    <string name="settings_theme_dark">Sombre</string>
+    <string name="settings_theme_system">Système</string>
+    <string name="settings_cloud_sync">Synchronisation cloud</string>
+    <string name="settings_backup">Sauvegarde</string>
+    <string name="settings_restore">Restauration</string>
+    <string name="settings_about">À propos</string>
+
+    <!-- Hints -->
+    <string name="hint_marque">Ex: Peugeot</string>
+    <string name="hint_modele">Ex: 308</string>
+    <string name="hint_version">Ex: GT-Line</string>
+    <string name="hint_couleur">Ex: Bleu métallisé</string>
+    <string name="hint_immatriculation">Ex: AB-123-CD</string>
+    <string name="hint_lieu">Ex: Paris</string>
+    <string name="hint_tags">Ex: sport, rare</string>
+
+</resources>
