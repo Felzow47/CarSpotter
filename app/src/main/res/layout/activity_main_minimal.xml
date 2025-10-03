@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Toolbar simple -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="CarSpotter"
+        app:titleTextColor="@android:color/white" />
+
+    <!-- Contenu principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Message de bienvenue -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚗 Bienvenue sur CarSpotter"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                android:padding="16dp"
+                android:background="@android:color/holo_blue_light"
+                android:textColor="@android:color/white" />
+
+            <!-- Status -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✅ Build : Fonctionnel\n🔧 App : En cours de correction\n🎯 Objectif : Interface simple qui fonctionne"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:padding="16dp"
+                android:background="@android:color/holo_green_light"
+                android:textColor="@android:color/white" />
+
+            <!-- Boutons d'action -->
+            <Button
+                android:id="@+id/btn_add_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📸 Ajouter une voiture"
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/btn_view_collection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚗 Voir ma collection"
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/btn_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚙️ Paramètres"
+                android:layout_marginBottom="12dp"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <!-- Message de debug -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛠️ Mode Debug Activé\n\nSi vous voyez ce message, l'app démarre correctement !\nProchaine étape : implémenter les fonctionnalités."
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                android:padding="16dp"
+                android:background="@android:color/holo_orange_light"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
