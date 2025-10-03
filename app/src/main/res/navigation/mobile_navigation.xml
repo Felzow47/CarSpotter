@@ -7,26 +7,14 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.carspotter.ui.fragment.HomeFragment"
-        android:label="@string/navigation_home"
+        android:name="com.felzow47.carspotter.ui.fragment.HomeFragment"
+        android:label="🏠 Accueil"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_collection"
-        android:name="com.example.carspotter.ui.fragment.CollectionFragment"
-        android:label="@string/navigation_collection"
+        android:name="com.felzow47.carspotter.ui.fragment.CollectionFragment"
+        android:label="🚗 Collection"
         tools:layout="@layout/fragment_collection" />
-
-    <fragment
-        android:id="@+id/nav_favorites"
-        android:name="com.example.carspotter.ui.fragment.FavoritesFragment"
-        android:label="@string/navigation_favorites"
-        tools:layout="@layout/fragment_favorites" />
-
-    <fragment
-        android:id="@+id/nav_search"
-        android:name="com.example.carspotter.ui.fragment.SearchFragment"
-        android:label="@string/navigation_search"
-        tools:layout="@layout/fragment_search" />
 
 </navigation>

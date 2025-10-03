@@ -14,7 +14,8 @@ class VoitureViewModel @Inject constructor(
     private val repository: VoitureRepository
 ) : ViewModel() {
 
-    fun getAllVoitures(): LiveData<List<Voiture>> = repository.getAllVoitures()
+    // Propriété LiveData pour accès direct
+    val allVoitures: LiveData<List<Voiture>> = repository.getAllVoitures()
 
     fun getVoitureById(id: Long): LiveData<Voiture?> = repository.getVoitureById(id)
 

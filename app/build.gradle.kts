@@ -103,6 +103,9 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.4")
     implementation("androidx.camera:camera-view:1.3.4")
 
+    // Guava pour CameraX (résout le problème ListenableFuture)
+    implementation("com.google.guava:guava:33.0.0-android")
+
     // Location - versions compatibles
     implementation("com.google.android.gms:play-services-location:21.3.0")
     implementation("com.google.android.gms:play-services-maps:18.2.0")
