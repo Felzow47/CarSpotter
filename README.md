@@ -2,12 +2,36 @@
 
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org)
-[![License](https://img.shields.io/badge/License-Private-red.svg)]()
-[![Status](https://img.shields.io/badge/Status-Interface%20Ready-orange.svg)]()
+[![License](https://img.shields.io/badge/License-Public-red.svg)]()
+[![Status: Half-Abandoned](https://img.shields.io/badge/Status-Half--Abandoned-red.svg)]()
 
-Application Android moderne dédiée aux passionnés d'automobile pour photographier, cataloguer et organiser une collection de voitures qu'on n'as vu avec reconnaissance automatique des plaques d'immatriculation.
+Modern Android application dedicated to car enthusiasts for photographing, cataloging, and organizing a collection of cars they have spotted with automatic license plate recognition.
 
 ---
+> [!NOTE]
+> ## 💤 Actual Project Status & Personal Note
+>
+> Progress is very slow, and the project is half-abandoned because I’m stuck on many technical aspects.  
+> I’m a beginner in Kotlin and Android Studio, so much of this project is still beyond my current knowledge.  
+> This turned out to be really complicated for a first-time app!  
+> If you find this repo, please don’t expect a complete app or polished, expert code.  
+> It’s mostly a learning playground, filled with trial, error, and struggles.  
+>  
+> **Any help, advice, forks, or suggestions are very welcome!**
+>
+ 
+
+<br>
+<br>
+<details>
+  
+  **<summary> 📂 View what was planned. : Features & tech stack (most of it may never happen ! :D ) </summary>**
+
+> This section lists all the features, roadmap ideas, and technical stack I originally intended for this project.  
+> However, since this is my very first Android app, most of these ideas are probably way too complex so don’t expect many of them to actually make it into the app.  
+> Consider this more as a learning wishlist than a set of actual, realistic goals! As said before any advice, help or fork are welcome.
+> 
+> Also sorry all the ideas are in french since originaly it was a private repo but i made it public if sommone got same idea as me and want to see how i oirginaly planned all
 
 ## 🚦 État du Projet
 
@@ -122,12 +146,11 @@ Le fichier `google-services.json` est présent mais Firebase n'est pas encore ut
 
 Le fichier `google-services.json` est présent mais Firebase n'est pas utilisé pour l'instant.
 
----
+## 📜 License
 
-## 📑 Licence
+See [LICENSE](LICENSE) for details.
 
-Projet privé. Tous droits réservés.
+**🚗 Développement Semi-actif — interface prête, fonctionnalités à venir !**
+~~
 
----
-
-**🚗 Développement actif — interface prête, fonctionnalités à venir !**
+</details>
